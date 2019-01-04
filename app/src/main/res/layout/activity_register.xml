@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/loge_rec_bag"
+    tools:context=".activity.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/phone_iv_img"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignBottom="@id/reg_phone"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:src="@mipmap/register_icon_phone_n" />
+
+    <EditText
+        android:id="@+id/reg_phone"
+        android:layout_width="@dimen/dp_270"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_180"
+        android:layout_toRightOf="@id/phone_iv_img"
+        android:background="@null"
+        android:hint="手机号"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="@dimen/sp_16" />
+
+    <View
+        android:id="@+id/view_phone_reg"
+        android:layout_width="@dimen/dp_305"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/reg_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/login_view_bg" />
+
+    <ImageView
+        android:id="@+id/verification_reg"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_below="@id/view_phone_reg"
+        android:src="@mipmap/login_icon_verification_code_n"
+        android:layout_marginLeft="@dimen/dp_30"/>
+
+    <EditText
+        android:id="@+id/reg_verification"
+        android:layout_width="@dimen/dp_240"
+        android:layout_height="@dimen/dp_30"
+        android:layout_toRightOf="@id/verification_reg"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_below="@id/view_phone_reg"
+        android:background="@null"
+        android:hint="验证码"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/reg_hq_verification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_10"
+        android:text="获取验证码"
+        android:layout_alignBottom="@id/reg_verification"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_36"
+        android:textColor="@color/colorWhite"/>
+
+    <View
+        android:id="@+id/view_verification_reg"
+        android:layout_width="@dimen/dp_305"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/reg_verification"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/login_view_bg" />
+
+    <ImageView
+        android:id="@+id/lock_reg"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_below="@id/view_verification_reg"
+        android:src="@mipmap/register_icon_lock_n"
+        android:layout_marginLeft="@dimen/dp_30"/>
+
+    <EditText
+        android:id="@+id/reg_pwd"
+        android:layout_width="@dimen/dp_270"
+        android:layout_height="@dimen/dp_30"
+        android:background="@null"
+        android:hint="登录密码"
+        android:password="true"
+        android:layout_toRightOf="@id/lock_reg"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_below="@id/view_verification_reg"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="@dimen/sp_16" />
+
+    <View
+        android:id="@+id/view_pwd_reg"
+        android:layout_width="@dimen/dp_305"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/reg_pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/login_view_bg" />
+
+    <TextView
+        android:id="@+id/reg_login_back"
+        android:layout_below="@id/view_pwd_reg"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_36"
+        android:text="已有账户？立即登陆"/>
+
+
+    <Button
+        android:id="@+id/reg_btn_go"
+        android:layout_width="@dimen/dp_280"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_125"
+        android:background="@drawable/login_btn_bg"
+        android:text="注册"
+        android:textColor="#ff5f71"
+        android:textSize="@dimen/sp_18" />
+
+</RelativeLayout>

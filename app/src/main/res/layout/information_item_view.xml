@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="我的资料"
+        android:textColor="@color/color666"
+        android:textSize="@dimen/sp_16" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="@dimen/dp_166"
+        android:layout_below="@id/t"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/login_btn_bg">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="我的头像"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/information_img"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            fresco:backgroundImage="@mipmap/bitmap_my_copy"
+            fresco:roundAsCircle="true"
+            fresco:roundBottomLeft="false"
+            fresco:roundBottomRight="true"
+            fresco:roundTopLeft="true"
+            fresco:roundTopRight="false"
+            fresco:roundedCornerRadius="@dimen/dp_1"
+            fresco:roundingBorderWidth="1px"
+            fresco:roundingBorderColor="#9999"/>
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/information_img"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/my_shape_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="我的昵称"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/information_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="我是吃不胖的小姐姐"
+            android:textColor="#999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:id="@+id/ncv"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/information_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/sp_12"
+            android:background="@drawable/my_shape_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ncv"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="我的密码"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/information_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ncv"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="XXXXXXX"
+            android:textColor="#999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/information_pwd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/sp_12"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@drawable/my_shape_bg" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

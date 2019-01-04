@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/dp_312"
+        android:background="@drawable/new_bg"
+        android:layout_height="@dimen/dp_118">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/vogue_img"
+            android:layout_width="@dimen/dp_85"
+            android:layout_height="@dimen/dp_98"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"/>
+
+        <TextView
+            android:id="@+id/vogue_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/vogue_img"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:lines="3"
+            android:ellipsize="end"
+            android:textColor="@color/color666"/>
+
+        <TextView
+            android:id="@+id/vogue_price"
+            android:layout_alignBottom="@id/vogue_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XXXXX"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/vogue_img"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/sp_14" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

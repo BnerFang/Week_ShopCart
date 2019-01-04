@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/home_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/r_v_l"
+        android:layout_marginTop="@dimen/dp_36">
+
+        <ImageView
+            android:id="@+id/home_page_sort"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:src="@mipmap/common_nav_btn_menu_n" />
+
+        <ImageView
+            android:id="@+id/home_page_search"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/common_nav_btn_search_n" />
+
+        <RelativeLayout
+            android:id="@+id/ed_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/home_page_sort"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_230"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_shape_bg">
+
+                <EditText
+                    android:id="@+id/ed_txt"
+                    android:layout_width="@dimen/dp_230"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@null"
+                    android:hint="请输入您要搜索的商品"
+                    android:textSize="@dimen/sp_12" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ed_btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_24"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="@color/color666"
+                android:textSize="@dimen/sp_14" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/r_v_l"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/sl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--banner-->
+                <RelativeLayout
+                    android:id="@+id/home_layout_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_164"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/login_view_bg"
+                    android:clipChildren="false"
+                    android:layerType="software">
+
+                    <com.stx.xhb.xbanner.XBanner
+                        android:id="@+id/home_page_vp"
+                        clipChildrenLeftRightMargin="10dp"
+                        isClipChildrenMode="true"
+                        android:layout_width="@dimen/dp_300"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/dp_30"
+                        android:clipChildren="false"
+                        app:AutoPlayTime="3000"
+                        app:isShowIndicatorOnlyOne="false"
+                        app:isShowNumberIndicator="true"
+                        app:pageChangeDuration="800" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/new_t"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_below="@id/home_layout_2"
+                    android:background="@mipmap/bitmap">
+
+                    <TextView
+                        android:id="@+id/new_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="热销新品"
+                        android:textColor="#ff7f57"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/new_btn_more"
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_24"
+                        android:background="@mipmap/common_btn_more_yellow_n" />
+
+                </RelativeLayout>
+
+                <!--热销新品-->
+                <RelativeLayout
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/new_t"
+                    android:background="@drawable/login_view_bg">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/home_page_rv_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_14" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/vogue_t"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_below="@id/rv"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/bitmap_3">
+
+                    <TextView
+                        android:id="@+id/vogue_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="魔力时尚"
+                        android:textColor="#787AF6"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/vogue_btn_more"
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_24"
+                        android:background="@mipmap/home_btn_more_purple_n" />
+
+                </RelativeLayout>
+
+                <!--魔力时尚-->
+                <RelativeLayout
+                    android:id="@+id/rv_vo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/vogue_t"
+                    android:background="@drawable/login_view_bg">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/home_page_rv_vogue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:background="@drawable/login_view_bg" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/live_t"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_below="@id/rv_vo"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/bitmap_2">
+
+                    <TextView
+                        android:id="@+id/live_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="品质生活"
+                        android:textColor="#FF5F71"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:id="@+id/live_btn_more"
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_24"
+                        android:background="@mipmap/home_btn_moer_pink_n" />
+
+                </RelativeLayout>
+
+                <!--品质生活-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/live_t"
+                    android:background="@drawable/login_view_bg">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/home_page_rv_live"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:background="@drawable/login_view_bg" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <!--搜索联动-->
+        <RelativeLayout
+            android:id="@+id/s_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/search_x_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_20" />
+
+        </RelativeLayout>
+
+        <!--二级联动-->
+        <RelativeLayout
+            android:id="@+id/seach_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/search_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_20" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -4,7 +4,7 @@ package com.fsy.bawayshop.bean;
  * @author : FangShiKang
  * @date : 2018/12/28.
  * email : fangshikang@outlook.com
- * desc :
+ * desc :       注册实体类
  */
 public class RegisterBean {
     private String status;

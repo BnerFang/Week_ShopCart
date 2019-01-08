@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/dp_10"
     android:gravity="center"
     android:orientation="vertical">
@@ -18,14 +19,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/circles_img"
                 android:layout_width="@dimen/dp_50"
                 android:layout_height="@dimen/dp_50"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_10"
-                android:src="@mipmap/touxiang1" />
+                fresco:backgroundImage="@mipmap/touxiang1"
+                fresco:roundAsCircle="true"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundedCornerRadius="@dimen/dp_1"
+                fresco:roundingBorderWidth="1px"
+                fresco:roundingBorderColor="#9999"/>
 
             <TextView
                 android:id="@+id/circles_name"
@@ -63,13 +72,12 @@
             android:textColor="@color/color666"
             android:textSize="@dimen/sp_12" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/circles_icon"
             android:layout_width="@dimen/dp_290"
             android:layout_height="wrap_content"
             android:layout_below="@id/circles_title"
-            android:layout_margin="@dimen/dp_10"
-            android:background="@drawable/new_bg" />
+            android:layout_margin="@dimen/dp_10" />
 
         <ImageView
             android:id="@+id/circles_prise"

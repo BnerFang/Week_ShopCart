@@ -13,6 +13,8 @@ import java.util.Map;
 public interface IModel {
 
     void onPostData(String url, Map<String, String> map, Class clazz, MyCallBack callBack);
+    void onPutData(String url, Map<String, String> map, Class clazz, MyCallBack callBack);
+    void onPostDatas(String url, Map<String, String> map, Class clazz, MyCallBack callBack);
     void onGetData(String url,Class clazz,MyCallBack callBack);
 
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10">
+
+    <CheckBox
+        android:id="@+id/cart_item_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14" />
+
+    <RelativeLayout
+        android:id="@+id/cart_item_layout"
+        android:layout_width="@dimen/dp_292"
+        android:layout_height="@dimen/dp_97"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/foot_shape_bg">
+
+        <ImageView
+            android:id="@+id/cart_item_img"
+            android:layout_width="68dp"
+            android:layout_height="@dimen/dp_71"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8" />
+
+
+        <TextView
+            android:id="@+id/cart_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toRightOf="@id/cart_item_img"
+            android:ellipsize="end"
+            android:lines="2"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/cart_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/cart_item_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/cart_item_img"
+            android:text="XXXX"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/sp_14" />
+
+        <com.fsy.bawayshop.customer.CustomView
+            android:id="@+id/customview"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignBottom="@id/cart_item_img"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/cart_item_del"
+        android:visibility="gone"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_97"
+        android:layout_toRightOf="@id/cart_item_layout"
+        android:background="#ff5e70"
+        android:text="删除"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_14" />
+
+</RelativeLayout>

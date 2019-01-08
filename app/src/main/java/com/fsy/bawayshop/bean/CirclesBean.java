@@ -6,7 +6,7 @@ import java.util.List;
  * @author : FangShiKang
  * @date : 2019/01/03.
  * email : fangshikang@outlook.com
- * desc :
+ * desc :       圈子列表 实体类
  */
 public class CirclesBean {
 

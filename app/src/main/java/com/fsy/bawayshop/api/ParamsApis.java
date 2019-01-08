@@ -15,4 +15,9 @@ public class ParamsApis {
     public static final String POST_REG_BODY_PHONE = "phone";
     public static final String POST_REG_BODY_PWD = "pwd";
 
+    //点赞
+    public static final String POST_DZ_KEY = "circleId";
+    //加入购物车
+    public static final String POST_CART_DATA_KEY = "data";
+
 }

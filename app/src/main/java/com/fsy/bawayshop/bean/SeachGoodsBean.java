@@ -6,7 +6,7 @@ import java.util.List;
  * @author : FangShiKang
  * @date : 2019/01/04.
  * email : fangshikang@outlook.com
- * desc :
+ * desc :       搜索商品实体类
  */
 public class SeachGoodsBean {
 

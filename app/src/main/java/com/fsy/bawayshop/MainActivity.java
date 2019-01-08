@@ -166,4 +166,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             return list.size();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.finish();
+    }
 }

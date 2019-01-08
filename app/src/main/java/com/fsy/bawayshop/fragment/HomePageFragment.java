@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.fsy.bawayshop.R;
+import com.fsy.bawayshop.activity.DetailsActivity;
 import com.fsy.bawayshop.adapter.MyHomePagerLiveAdapter;
 import com.fsy.bawayshop.adapter.MyHomePagerNewAdapter;
 import com.fsy.bawayshop.adapter.MyHomePagerVogueAdapter;
@@ -160,16 +161,20 @@ public class HomePageFragment extends Fragment implements IView {
                 if (showBean.getStatus().equals("0000")) {
                     List<ShowBean.ResultBean.PzshBean> pzsh = showBean.getResult().getPzsh();
                     for (int i = 0; i < pzsh.size(); i++) {
-                        List<ShowBean.ResultBean.PzshBean.CommodityListBeanX> list = pzsh.get(i).getCommodityList();
+                        final List<ShowBean.ResultBean.PzshBean.CommodityListBeanX> list = pzsh.get(i).getCommodityList();
                         mMyHomePagerLiveAdapter = new MyHomePagerLiveAdapter(getActivity(), list);
+                        mHomePageRvLive.setAdapter(mMyHomePagerLiveAdapter);
+                        mMyHomePagerLiveAdapter.setOnClickedListener(new MyHomePagerLiveAdapter.onClickedListener() {
+                            @Override
+                            public void onChecked(int position) {
+                                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("commodityId", list.get(position).getCommodityId() + "");
+                                intent.putExtras(bundle);
+                                getActivity().startActivity(intent);
+                            }
+                        });
                     }
-                    mHomePageRvLive.setAdapter(mMyHomePagerLiveAdapter);
-                    mMyHomePagerLiveAdapter.setOnClickedListener(new MyHomePagerLiveAdapter.onClickedListener() {
-                        @Override
-                        public void onChecked(int position) {
-                            Toast.makeText(getActivity(), "点击了", Toast.LENGTH_SHORT).show();
-                        }
-                    });
                 }
             }
 
@@ -192,15 +197,19 @@ public class HomePageFragment extends Fragment implements IView {
                     for (int i = 0; i < mlssBeans.size(); i++) {
                         mList = mlssBeans.get(i).getCommodityList();
                         mMyHomePagerVogueAdapter = new MyHomePagerVogueAdapter(getActivity(), mList);
+                        mHomePageRvVogue.setAdapter(mMyHomePagerVogueAdapter);
+                        mMyHomePagerVogueAdapter.setOnClickedListener(new MyHomePagerVogueAdapter.onClickedListener() {
+                            @Override
+                            public void onChecked(int position) {
+                                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("commodityId", mList.get(position).getCommodityId() + "");
+                                intent.putExtras(bundle);
+                                getActivity().startActivity(intent);
+                            }
+                        });
                     }
-                    mHomePageRvVogue.setAdapter(mMyHomePagerVogueAdapter);
 
-                    mMyHomePagerVogueAdapter.setOnClickedListener(new MyHomePagerVogueAdapter.onClickedListener() {
-                        @Override
-                        public void onChecked(int position) {
-                            Toast.makeText(getActivity(), "点击了", Toast.LENGTH_SHORT).show();
-                        }
-                    });
                 }
             }
 
@@ -217,20 +226,26 @@ public class HomePageFragment extends Fragment implements IView {
             @Override
             public void OkHttpSuccess(String data) {
                 Gson gson = new Gson();
-                ShowBean showBean = gson.fromJson(data, ShowBean.class);
+                final ShowBean showBean = gson.fromJson(data, ShowBean.class);
                 if (showBean.getStatus().equals("0000")) {
                     List<ShowBean.ResultBean.RxxpBean> rxxp = showBean.getResult().getRxxp();
                     for (int i = 0; i < rxxp.size(); i++) {
-                        List<ShowBean.ResultBean.RxxpBean.CommodityListBean> list = rxxp.get(i).getCommodityList();
+                        final List<ShowBean.ResultBean.RxxpBean.CommodityListBean> list = rxxp.get(i).getCommodityList();
                         mMyHomePagerNewAdapter = new MyHomePagerNewAdapter(getContext(), list);
+                        mHomePageRvNew.setAdapter(mMyHomePagerNewAdapter);
+                        mMyHomePagerNewAdapter.setOnClickedListener(new MyHomePagerNewAdapter.onClickedListener() {
+                            @Override
+                            public void onChecked(int position) {
+                                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("commodityId", list.get(position).getCommodityId() + "");
+                                intent.putExtras(bundle);
+                                getActivity().startActivity(intent);
+
+                            }
+                        });
                     }
-                    mHomePageRvNew.setAdapter(mMyHomePagerNewAdapter);
-                    mMyHomePagerNewAdapter.setOnClickedListener(new MyHomePagerNewAdapter.onClickedListener() {
-                        @Override
-                        public void onChecked(int position) {
-                            Toast.makeText(getActivity(), "点击了", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+
                 }
             }
 
@@ -333,14 +348,18 @@ public class HomePageFragment extends Fragment implements IView {
                 Gson gson = new Gson();
                 SearchBean bean = gson.fromJson(data, SearchBean.class);
                 if (bean.getStatus().equals("0000")) {
-                    List<SearchBean.ResultBean> result = bean.getResult();
+                    final List<SearchBean.ResultBean> result = bean.getResult();
                     mMySearchAdapter = new MySearchAdapter(getActivity(), result);
                     mSearchXRv.setAdapter(mMySearchAdapter);
                     mMySearchAdapter.notifyDataSetChanged();
                     mMySearchAdapter.setOnClickedListener(new MySearchAdapter.onClickedListener() {
                         @Override
                         public void onChecked(int position) {
-                            Toast.makeText(getActivity(), "点击了", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("commodityId", result.get(position).getCommodityId() + "");
+                            intent.putExtras(bundle);
+                            getActivity().startActivity(intent);
                         }
                     });
                 }
@@ -420,9 +439,19 @@ public class HomePageFragment extends Fragment implements IView {
         } else if (data instanceof SeachGoodsBean) {//
             SeachGoodsBean bean = (SeachGoodsBean) data;
             if (bean.getStatus().equals("0000")) {
-                List<SeachGoodsBean.ResultBean> result = bean.getResult();
+                final List<SeachGoodsBean.ResultBean> result = bean.getResult();
                 mSeachGoodsAdapter = new SeachGoodsAdapter(getActivity(), result);
                 mSearchRv.setAdapter(mSeachGoodsAdapter);
+                mSeachGoodsAdapter.setOnClickedListener(new SeachGoodsAdapter.onClickedListener() {
+                    @Override
+                    public void onChecked(int position) {
+                        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("commodityId", result.get(position).getCommodityId() + "");
+                        intent.putExtras(bundle);
+                        getActivity().startActivity(intent);
+                    }
+                });
             }
         }
     }
@@ -446,6 +475,7 @@ public class HomePageFragment extends Fragment implements IView {
     }
 
     private long exitTime = 0;
+
     //主界面获取焦点
     private void getFocus() {
         getView().setFocusableInTouchMode(true);
@@ -453,14 +483,6 @@ public class HomePageFragment extends Fragment implements IView {
         getView().setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-               /* if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                    // 监听到返回按钮点击事件
-                    mSeachRl.setVisibility(View.GONE);
-                    mSl.setVisibility(View.VISIBLE);
-                    mSRl.setVisibility(View.GONE);
-                    return true;
-                }
-                return false;*/
                 if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
                     mSeachRl.setVisibility(View.GONE);
                     mSl.setVisibility(View.VISIBLE);

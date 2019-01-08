@@ -26,6 +26,8 @@ import rx.schedulers.Schedulers;
  */
 public class RetrofitManager<T> {
 
+    //http://172.17.8.100/small/
+    //http://mobile.bwstudent.com/small/
     private final String BASE_URL = "http://mobile.bwstudent.com/small/";
 
     private static RetrofitManager manager;
@@ -70,6 +72,25 @@ public class RetrofitManager<T> {
             requestBodyMap.put(kay, requestBody);
         }
         return requestBodyMap;
+    }
+
+    /**
+     * put
+     * @param url
+     * @param map
+     * @param mHttpListener
+     * @return
+     */
+    public RetrofitManager put(String url, Map<String, RequestBody> map, HttpListener mHttpListener) {
+        //判断,当map为空的时候,重新创建一个   HashMap
+        if (map == null) {
+            map = new HashMap<>();
+        }
+        mBaseApis.put(url,map)
+                .subscribeOn(Schedulers.io())//后台执行在哪个线程
+                .observeOn(AndroidSchedulers.mainThread())//最终完成后执行在哪个线程
+                .subscribe(getObserver(mHttpListener));//设置我们的    RxJava
+        return manager;
     }
 
 

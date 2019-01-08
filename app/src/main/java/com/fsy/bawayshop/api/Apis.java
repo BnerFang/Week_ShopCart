@@ -16,6 +16,8 @@ public class Apis {
     public static final String POST_REG_URL = "user/v1/register";
     /**
      * banner展示列表 http://172.17.8.100/small/commodity/v1/bannerShow
+     *
+     * http://mobile.bwstudent.com/small/
      */
     public static final String URL_BANNER_SHOW_GET = "http://mobile.bwstudent.com/small/commodity/v1/bannerShow";
 
@@ -23,7 +25,7 @@ public class Apis {
     public static final String URL_SHOW_GET = "http://mobile.bwstudent.com/small/commodity/v1/commodityList";
 
     //圈子列表 http://172.17.8.100/small/circle/v1/findCircleList
-    public static final String URL_FIND_CIRCLE_LIST_GET = "circle/v1/findCircleList?page=1&count=10";
+    public static final String URL_FIND_CIRCLE_LIST_GET = "circle/v1/findCircleList";
 
     //查询一级商品类目 http://172.17.8.100/small/commodity/v1/findFirstCategory
     public static final String URL_FIND_FIRST_CATEGORY_GET = "commodity/v1/findFirstCategory";
@@ -42,6 +44,21 @@ public class Apis {
 
     //查询用户钱包 http://172.17.8.100/small/user/verify/v1/findUserWallet
     public static final String URL_FIND_USER_WALLET_GET = "user/verify/v1/findUserWallet?page=";
+
+    //商品详情 http://172.17.8.100/small/commodity/v1/findCommodityDetailsById
+    public static final String URL_FIND_COMMODITY_DETAILS_BYID_GET = "commodity/v1/findCommodityDetailsById?commodityId=";
+
+    //圈子点赞 http://172.17.8.100/small/circle/verify/v1/addCircleGreat
+    public static final String URL_ADD_CIRCLE_GREAT_POST = "user/verify/v1/addCircleGreat";
+
+    //我的足迹 http://172.17.8.100/small/commodity/verify/v1/browseList
+    public static final String URL_BROWSE_LIST_GET = "commodity/verify/v1/browseList";
+
+    //同步购物车数据 /加入购物车  http://172.17.8.100/small/order/verify/v1/syncShoppingCart
+    public static final String URL_SYNC_SHOPPING_CART_PUT = "order/verify/v1/syncShoppingCart";
+
+    //查询购物车 http://172.17.8.100/small/order/verify/v1/findShoppingCart
+    public static final String URL_FIND_SHOPPING_CART_GET = "order/verify/v1/findShoppingCart";
 
     //修改昵称 http://172.17.8.100/small/user/verify/v1/modifyUserNick
     public static final String URL_UPDATE_NAME_POST = "user/verify/v1/modifyUserNick";
@@ -79,12 +96,6 @@ public class Apis {
     //收货 http://172.17.8.100/small/order/verify/v1/confirmReceipt
     public static final String URL_CONFIRM_RECEIPT_PUT = "user/verify/v1/confirmReceipt";
 
-    //查询购物车 http://172.17.8.100/small/order/verify/v1/findShoppingCart
-    public static final String URL_FIND_SHOPPING_CART_GET = "user/verify/v1/findShoppingCart";
-
-    //同步购物车数据 http://172.17.8.100/small/order/verify/v1/syncShoppingCart
-    public static final String URL_SYNC_SHOPPING_CART_PUT = "user/verify/v1/syncShoppingCart";
-
     //查询订单明细数据 http://172.17.8.100/small/order/verify/v1/findOrderInfo
     public static final String URL_FIND_ORDER_INFO_GET = "user/verify/v1/findOrderInfo";
 
@@ -97,9 +108,6 @@ public class Apis {
     //我的圈子 http://172.17.8.100/small/circle/verify/v1/findMyCircleById
     public static final String URL_FIND_MYCIRCLE_BYID_GET = "user/verify/v1/findMyCircleById";
 
-    //圈子点赞 http://172.17.8.100/small/circle/verify/v1/addCircleGreat
-    public static final String URL_ADD_CIRCLE_GREAT_POST = "user/verify/v1/addCircleGreat";
-
     //取消点赞 http://172.17.8.100/small/circle/verify/v1/cancelCircleGreat
     public static final String URL_CANCLE_CIRCLE_GREAT_DELETE = "user/verify/v1/cancelCircleGreat";
 
@@ -108,12 +116,6 @@ public class Apis {
 
     //根据商品列表归属标签查询商品信息 http://172.17.8.100/small/commodity/v1/findCommodityListByLabel
     public static final String URL_FIND_COMMODITY_LIST_BYLABEL_GET = "commodity/v1/findCommodityListByLabel";
-
-    //商品详情 http://172.17.8.100/small/commodity/v1/findCommodityDetailsById
-    public static final String URL_FIND_COMMODITY_DETAILS_BYID_GET = "commodity/v1/findCommodityDetailsById";
-
-    //我的足迹 http://172.17.8.100/small/commodity/verify/v1/browseList
-    public static final String URL_BROWSE_LIST_GET = "commodity/verify/v1/browseList";
 
     //商品评论列表 http://172.17.8.100/small/commodity/v1/CommodityCommentList
     public static final String URL_COMMODITY_COMMENT_LIST_GET = "commodity/v1/CommodityCommentList";

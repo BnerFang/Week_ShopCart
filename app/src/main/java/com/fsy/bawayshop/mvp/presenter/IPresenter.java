@@ -10,6 +10,8 @@ import java.util.Map;
  */
 public interface IPresenter {
     void onPostDatas(String url, Map<String, String> map, Class clazz);
+    void onPutDatas(String url, Map<String, String> map, Class clazz);
+    void onPostDatass(String url, Map<String, String> map, Class clazz);
     void onGetDatas(String url, Class clazz);
 
 }

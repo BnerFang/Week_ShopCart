@@ -45,6 +45,49 @@ public class IPresenterImplement implements IPresenter {
     }
 
     /**
+     * put请求
+     * @param url
+     * @param map
+     * @param clazz
+     */
+    @Override
+    public void onPutDatas(String url, Map<String, String> map, Class clazz) {
+        mIModelImplement.onPutData(url, map, clazz, new MyCallBack() {
+            @Override
+            public void onSuccess(Object data) {
+                mIView.onISuccess(data);
+            }
+
+            @Override
+            public void onFailed(String error) {
+                mIView.onIFailed(error);
+            }
+        });
+    }
+
+
+    /**
+     * post  请求
+     * @param url
+     * @param map
+     * @param clazz
+     */
+    @Override
+    public void onPostDatass(String url, Map<String, String> map, Class clazz) {
+        mIModelImplement.onPostDatas(url, map, clazz, new MyCallBack() {
+            @Override
+            public void onSuccess(Object data) {
+                mIView.onISuccess(data);
+            }
+
+            @Override
+            public void onFailed(String error) {
+                mIView.onIFailed(error);
+            }
+        });
+    }
+
+    /**
      * get 请求
      * @param url
      * @param clazz

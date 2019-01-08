@@ -85,7 +85,6 @@ public class RegisterActivity extends AppCompatActivity implements IView {
                 mIPresenterImplement.onPostDatas(Apis.POST_REG_URL, mMap, RegisterBean.class);
                 break;
             case R.id.reg_login_back:
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 finish();
                 break;
         }

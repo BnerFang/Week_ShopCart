@@ -113,7 +113,6 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         mMyName.setText(mNickName + "");
         Uri uri = Uri.parse(mHeadPic);
         mMyImg.setImageURI(uri);
-        //Glide.with(getActivity()).load(mHeadPic).into(mMyImg);
     }
 
     @Override

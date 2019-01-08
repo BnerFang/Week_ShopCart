@@ -6,16 +6,9 @@ import java.util.List;
  * @author : FangShiKang
  * @date : 2019/01/04.
  * email : fangshikang@outlook.com
- * desc :
+ * desc :       我的钱包实体类
  */
 public class WalletBean {
-
-
-    /**
-     * result : {"balance":"99999999","detailList":[{"amount":"2","createTime":"1542476199000"}]}
-     * message : 查询成功
-     * status : 0000
-     */
 
     private ResultBean result;
     private String message;
@@ -46,10 +39,6 @@ public class WalletBean {
     }
 
     public static class ResultBean {
-        /**
-         * balance : 99999999
-         * detailList : [{"amount":"2","createTime":"1542476199000"}]
-         */
 
         private double balance;
         private List<DetailListBean> detailList;
@@ -71,10 +60,6 @@ public class WalletBean {
         }
 
         public static class DetailListBean {
-            /**
-             * amount : 2
-             * createTime : 1542476199000
-             */
 
             private double amount;
             private long createTime;

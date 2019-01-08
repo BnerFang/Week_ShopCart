@@ -6,15 +6,10 @@ import java.util.List;
  * @author : FangShiKang
  * @date : 2019/01/04.
  * email : fangshikang@outlook.com
- * desc :
+ * desc :       个人资料实体类
  */
 public class InFormationBean {
 
-    /**
-     * result : {"createTime":1546551669000,"headPic":"http://mobile.bwstudent.com/images/small/default/user.jpg","nickName":"ld_3Lnaz","password":"eWLPHopE945d2ivttHaQTQ==","phone":"18537610238","sex":1,"userId":22}
-     * message : 查询成功
-     * status : 0000
-     */
 
     private ResultBean result;
     private String message;
@@ -45,15 +40,6 @@ public class InFormationBean {
     }
 
     public static class ResultBean {
-        /**
-         * createTime : 1546551669000
-         * headPic : http://mobile.bwstudent.com/images/small/default/user.jpg
-         * nickName : ld_3Lnaz
-         * password : eWLPHopE945d2ivttHaQTQ==
-         * phone : 18537610238
-         * sex : 1
-         * userId : 22
-         */
 
         private long createTime;
         private String headPic;

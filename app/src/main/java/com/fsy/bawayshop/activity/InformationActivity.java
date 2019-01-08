@@ -49,4 +49,12 @@ public class InformationActivity extends AppCompatActivity implements IView {
     public void onIFailed(String error) {
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mIPresenterImplement != null) {
+            mIPresenterImplement = null;
+        }
+    }
 }

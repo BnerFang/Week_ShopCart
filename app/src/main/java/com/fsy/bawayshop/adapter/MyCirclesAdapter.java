@@ -3,12 +3,15 @@ package com.fsy.bawayshop.adapter;
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -32,6 +35,7 @@ public class MyCirclesAdapter extends RecyclerView.Adapter<MyCirclesAdapter.MyCi
 
     private Context mContext;
     private List<CirclesBean.ResultBean> mResultBeans = new ArrayList<>();
+    private boolean isCheck = false;
 
     public MyCirclesAdapter(Context context, List<CirclesBean.ResultBean> resultBeans) {
         mContext = context;
@@ -46,16 +50,13 @@ public class MyCirclesAdapter extends RecyclerView.Adapter<MyCirclesAdapter.MyCi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyCirclesViewHolder myCirclesViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final MyCirclesViewHolder myCirclesViewHolder, final int i) {
 
-        Glide.with(mContext).load(mResultBeans.get(i).getHeadPic()).into(myCirclesViewHolder.mCircleImageViewImg);
-        String image = mResultBeans.get(i).getImage();
+        //Glide.with(mContext).load(mResultBeans.get(i).getHeadPic()).into(myCirclesViewHolder.mCircleImageViewImg);
+        Glide.with(mContext).load(mResultBeans.get(i).getImage()).into(myCirclesViewHolder.mImageViewIcon);
+        String image = mResultBeans.get(i).getHeadPic();
         Uri uri = Uri.parse(image);
-        if (uri != null) {
-            myCirclesViewHolder.mCircleImageViewImg.setImageURI(uri);
-        } else {
-            myCirclesViewHolder.mCircleImageViewImg.setVisibility(View.GONE);
-        }
+        myCirclesViewHolder.mCircleImageViewImg.setImageURI(uri);
         myCirclesViewHolder.mTextViewName.setText(mResultBeans.get(i).getNickName());
         myCirclesViewHolder.mTextViewTitle.setText(mResultBeans.get(i).getContent());
         myCirclesViewHolder.mTextViewNum.setText(mResultBeans.get(i).getGreatNum() + "");
@@ -63,10 +64,25 @@ public class MyCirclesAdapter extends RecyclerView.Adapter<MyCirclesAdapter.MyCi
         String date = DateUtils.getDateToString(mResultBeans.get(i).getCreateTime());
         myCirclesViewHolder.mTextViewTiem.setText(date);
 
-        myCirclesViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        myCirclesViewHolder.mImageViewPrise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnClickedListener.onChecked(i);
+                if (isCheck == false) {
+                    //给布尔值重新赋值
+                    isCheck = true;
+                    Toast.makeText(mContext, "点赞成功", Toast.LENGTH_SHORT).show();
+                    //给点击按钮的图片重新赋值
+                    myCirclesViewHolder.mTextViewNum.setText(mResultBeans.get(i).getGreatNum() + 1 + "");
+                    myCirclesViewHolder.mImageViewPrise.setImageResource(R.mipmap.common_btn_prise_s);
+                } else if (isCheck == true) {
+                    //给布尔值重新赋值
+                    isCheck = false;
+                    Toast.makeText(mContext, "取消点赞", Toast.LENGTH_SHORT).show();
+                    //给点击按钮的图片重新赋值
+                    myCirclesViewHolder.mTextViewNum.setText(mResultBeans.get(i).getGreatNum() + "");
+                    myCirclesViewHolder.mImageViewPrise.setImageResource(R.mipmap.common_btn_prise_n);
+                    notifyDataSetChanged();
+                }
             }
         });
 
@@ -79,8 +95,8 @@ public class MyCirclesAdapter extends RecyclerView.Adapter<MyCirclesAdapter.MyCi
 
     public class MyCirclesViewHolder extends RecyclerView.ViewHolder {
 
-        CircleImageView mCircleImageViewImg;
-        SimpleDraweeView mImageViewIcon;
+        SimpleDraweeView mCircleImageViewImg;
+        ImageView mImageViewIcon;
         ImageView mImageViewPrise;
         TextView mTextViewName, mTextViewTiem, mTextViewTitle, mTextViewNum;
 

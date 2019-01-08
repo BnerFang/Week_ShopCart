@@ -179,4 +179,10 @@ public class HomePageActivity extends AppCompatActivity {
 
 
     // oppo手机安装APk密码  159870asd
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.finish();
+    }
 }

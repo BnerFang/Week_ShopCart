@@ -39,12 +39,19 @@ public class SeachGoodsAdapter extends RecyclerView.Adapter<SeachGoodsAdapter.Se
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SeachGoodsViewHolder seachGoodsViewHolder, int i) {
+    public void onBindViewHolder(@NonNull SeachGoodsViewHolder seachGoodsViewHolder, final int i) {
         String pic = mResultBeans.get(i).getMasterPic();
         Uri uri = Uri.parse(pic);
         seachGoodsViewHolder.mSimpleDraweeView.setImageURI(uri);
         seachGoodsViewHolder.mTextViewName.setText(mResultBeans.get(i).getCommodityName());
         seachGoodsViewHolder.mTextViewPrice.setText("￥" + mResultBeans.get(i).getPrice() + "");
+        seachGoodsViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOnClickedListener.onChecked(i);
+            }
+        });
+
     }
 
     @Override
@@ -62,5 +69,16 @@ public class SeachGoodsAdapter extends RecyclerView.Adapter<SeachGoodsAdapter.Se
             mTextViewName = itemView.findViewById(R.id.seach_goods_item_name);
             mTextViewPrice = itemView.findViewById(R.id.seach_goods_item_price);
         }
+    }
+
+    private onClickedListener mOnClickedListener;
+
+    public void setOnClickedListener(onClickedListener onClickedListener) {
+        mOnClickedListener = onClickedListener;
+    }
+
+    //自定义接口回调
+    public interface onClickedListener {
+        void onChecked(int position);
     }
 }

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SumNuBerActivity">
+
+
+    <Button
+        android:id="@+id/sum_btn_add_ress"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="@dimen/dp_40"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/sum_shape_bg"
+        android:text="暂无收货地址   点击添加"
+        android:textColor="#ff5f71"
+        android:textSize="@dimen/sp_12" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sum_btn_add_ress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/sum_shape_bg"
+        android:layout_above="@id/layout_sums">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sum_rv"
+            android:layout_width="@dimen/dp_312"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_sums"
+        android:layout_width="match_parent"
+        android:background="@drawable/login_view_bg"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/sum_layout"
+            android:layout_width="@dimen/dp_242"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="共"
+                android:textColor="@color/color666"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/sum_count"
+                android:layout_toRightOf="@id/g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/x"
+                android:layout_toRightOf="@id/sum_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="件商品，需付款"
+                android:textColor="@color/color666"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/sum_price"
+                android:layout_toRightOf="@id/x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:layout_toRightOf="@id/sum_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:textColor="@color/color666"
+                android:textSize="@dimen/sp_14" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/sum_order"
+            android:layout_width="@dimen/dp_118"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/sum_layout"
+            android:background="#ff5e70"
+            android:gravity="center"
+            android:text="提交订单"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

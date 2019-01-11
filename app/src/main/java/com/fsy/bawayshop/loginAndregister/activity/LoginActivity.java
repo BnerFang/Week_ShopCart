@@ -1,4 +1,4 @@
-package com.fsy.bawayshop.activity;
+package com.fsy.bawayshop.loginAndregister.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,7 +19,7 @@ import com.fsy.bawayshop.MainActivity;
 import com.fsy.bawayshop.R;
 import com.fsy.bawayshop.api.Apis;
 import com.fsy.bawayshop.api.ParamsApis;
-import com.fsy.bawayshop.bean.LoginBean;
+import com.fsy.bawayshop.loginAndregister.bean.LoginBean;
 import com.fsy.bawayshop.mvp.presenter.IPresenterImplement;
 import com.fsy.bawayshop.mvp.view.IView;
 

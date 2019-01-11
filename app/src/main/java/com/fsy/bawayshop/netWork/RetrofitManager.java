@@ -26,8 +26,8 @@ import rx.schedulers.Schedulers;
  */
 public class RetrofitManager<T> {
 
-    //http://172.17.8.100/small/
-    //http://mobile.bwstudent.com/small/
+    //内网   http://172.17.8.100/small/
+    //外网   http://mobile.bwstudent.com/small/
     private final String BASE_URL = "http://mobile.bwstudent.com/small/";
 
     private static RetrofitManager manager;
@@ -44,9 +44,6 @@ public class RetrofitManager<T> {
     private BaseApis mBaseApis;
 
     public RetrofitManager() {
-        //日志拦截器
-        /*HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);*/
         //获取 builder对象
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.writeTimeout(15, TimeUnit.SECONDS);//写入超时

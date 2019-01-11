@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.fsy.bawayshop.MainActivity;
 import com.fsy.bawayshop.R;
@@ -21,10 +20,7 @@ import com.fsy.bawayshop.activity.AddressActivity;
 import com.fsy.bawayshop.activity.CircleActivity;
 import com.fsy.bawayshop.activity.FootActivity;
 import com.fsy.bawayshop.activity.InformationActivity;
-import com.fsy.bawayshop.activity.LoginActivity;
 import com.fsy.bawayshop.activity.WalletActivity;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * @author : FangShiKang
@@ -149,4 +145,37 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    //    进行获取焦点，点击返回键返回上一级
+    /*@Override
+    public void onResume() {
+        super.onResume();
+
+        getFours();
+
+    }*/
+    //    进行获取焦点
+    /*long exitTime = 0;
+    private void getFours() {
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+                    if ((System.currentTimeMillis() - exitTime) > 2000){
+                       *//* Toast.makeText(getActivity(),"再按一次就退出了哟",Toast.LENGTH_SHORT).show();
+                        exitTime = System.currentTimeMillis();*//*
+                        startActivity(new Intent(getActivity(), MainActivity.class));
+                    }else {
+                        getActivity().finish();
+                        System.exit(0);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+    }*///    进行获取焦点
+
 }

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_312"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/img_shape_bg"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/dh_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="订单号"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/f_order_orderid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/dh_order"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/dh_order"
+            android:text="XXXXXXX"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:id="@+id/f_order_img_btn"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_12"
+            android:layout_alignBottom="@id/dh_order"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@mipmap/common_btn_more_n"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+        <RelativeLayout
+            android:id="@+id/f_order_layout1"
+            android:layout_width="@dimen/dp_292"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/f_order_orderid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/foot_shape_bg">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/f_order_img"
+                android:layout_width="@dimen/dp_81"
+                android:layout_height="@dimen/dp_81"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/f_order_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_toRightOf="@id/f_order_img"
+                android:ellipsize="end"
+                android:lines="2"
+                android:text="XXXXXX"
+                android:textColor="@color/color666"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/f_order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/f_order_img"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@id/f_order_img"
+                android:text="￥123.00"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/sp_14" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/f_order_tiem"
+            android:layout_below="@id/f_order_layout1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXXX-XX-XX  xx:xx:xx"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

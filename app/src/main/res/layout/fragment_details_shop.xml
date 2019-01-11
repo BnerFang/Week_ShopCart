@@ -28,6 +28,7 @@
             <WebView
                 android:layout_below="@id/dateils_rv"
                 android:id="@+id/dateils_webview"
+                android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

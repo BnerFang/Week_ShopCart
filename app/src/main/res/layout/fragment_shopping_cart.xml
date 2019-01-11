@@ -33,7 +33,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_20"
             android:layout_toRightOf="@id/cart_box"
-            android:text="合计：￥1360"
+            android:text="合计：￥0.00"
             android:textColor="@color/colorRed"
             android:textSize="@dimen/sp_12" />
 
@@ -44,7 +44,7 @@
             android:layout_height="@dimen/dp_50"
             android:layout_alignParentRight="true"
             android:background="#ff5e70"
-            android:text="去结算"
+            android:text="去结算：(0)"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/sp_16" />
 

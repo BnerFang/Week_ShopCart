@@ -1,23 +1,24 @@
 package com.fsy.bawayshop.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.fsy.bawayshop.MainActivity;
 import com.fsy.bawayshop.R;
 import com.fsy.bawayshop.adapter.MyCirclesAdapter;
 import com.fsy.bawayshop.api.Apis;
 import com.fsy.bawayshop.api.ParamsApis;
 import com.fsy.bawayshop.bean.CircleDZBean;
 import com.fsy.bawayshop.bean.CirclesBean;
-import com.fsy.bawayshop.bean.RegisterBean;
 import com.fsy.bawayshop.mvp.presenter.IPresenterImplement;
 import com.fsy.bawayshop.mvp.view.IView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -57,6 +58,7 @@ public class CirclesFragment extends Fragment implements IView {
         return view;
     }
 
+    //成功
     @Override
     public void onISuccess(Object data) {
         if (data instanceof CirclesBean) {
@@ -77,14 +79,14 @@ public class CirclesFragment extends Fragment implements IView {
                             public void run() {//设置刷新时间
                                 mCirclesRv.refreshComplete();
                             }
-                        },1500);
+                        }, 1500);
                     }
 
                     @Override
                     public void onLoadMore() {
-                        if (pager > 2 ){
+                        if (pager > 2) {
                             Toast.makeText(getActivity(), "没有更多数据了！！！", Toast.LENGTH_SHORT).show();
-                        }else {
+                        } else {
                             pager++;
                             mIPresenterImplement.onGetDatas(Apis.URL_FIND_CIRCLE_LIST_GET + "?page=" + pager + "&count=" + count, CirclesBean.class);
                             mCirclesRv.postDelayed(new Runnable() {
@@ -92,10 +94,11 @@ public class CirclesFragment extends Fragment implements IView {
                                 public void run() {
                                     mCirclesRv.refreshComplete();
                                 }
-                            },1500);
+                            }, 1500);
                         }
                     }
                 });
+                //圈子点赞
                 mMyCirclesAdapter.setOnClickedListener(new MyCirclesAdapter.onClickedListener() {
                     @Override
                     public void onChecked(int position) {
@@ -119,6 +122,43 @@ public class CirclesFragment extends Fragment implements IView {
 
     }
 
+
+    //    进行获取焦点，点击返回键返回上一级
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        getFours();
+
+    }
+    //    进行获取焦点
+    long exitTime = 0;
+    private void getFours() {
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+                    if ((System.currentTimeMillis() - exitTime) > 2000){
+                       /* Toast.makeText(getActivity(),"再按一次就退出了哟",Toast.LENGTH_SHORT).show();
+                        exitTime = System.currentTimeMillis();*/
+                        startActivity(new Intent(getActivity(), MainActivity.class));
+                    }else {
+                        getActivity().finish();
+                        System.exit(0);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+    }//    进行获取焦点
+
+
+    /**
+     * 防止内存泄露
+     */
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/layout_order"
         android:layout_width="@dimen/dp_312"
         android:layout_height="@dimen/dp_102"
         android:layout_centerHorizontal="true"
@@ -119,6 +120,87 @@
                 android:textSize="@dimen/sp_12" />
 
         </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/order_shape_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/money_rv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:visibility="gone"
+        android:background="@drawable/order_shape_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_money_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/receive_rv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:visibility="gone"
+        android:background="@drawable/order_shape_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_receive_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/comment_rv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:visibility="gone"
+        android:background="@drawable/order_shape_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_comment_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/finish_rv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_order"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:visibility="gone"
+        android:background="@drawable/order_shape_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_finish_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 

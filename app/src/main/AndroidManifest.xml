@@ -37,7 +37,7 @@
             -->
         </activity>
         <!-- 登录 -->
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".loginAndregister.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,13 +45,16 @@
             </intent-filter>
         </activity>
         <!-- 注册 -->
-        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".loginAndregister.activity.RegisterActivity"/>
+
         <activity android:name=".activity.InformationActivity" />
         <activity android:name=".activity.CircleActivity" />
         <activity android:name=".activity.FootActivity" />
         <activity android:name=".activity.WalletActivity" />
         <activity android:name=".activity.AddressActivity" />
-        <activity android:name=".activity.DetailsActivity"></activity>
+        <activity android:name=".activity.DetailsActivity" />
+        <activity android:name=".activity.AllRessActivity" />
+        <activity android:name=".activity.SumNuBerActivity"></activity>
     </application>
 
 </manifest>

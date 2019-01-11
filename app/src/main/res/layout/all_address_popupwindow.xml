@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_popup"
+    android:layout_width="match_parent"
+    android:background="@color/color666"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/new_bg">
+
+        <TextView
+            android:id="@+id/pop_sjr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="收件人："
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pop_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pop_sjr"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_toRightOf="@id/pop_sjr"
+            android:background="@null"
+            android:hint="请输入收件人姓名"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pop_sjr"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#f2f2f2" />
+
+        <TextView
+            android:id="@+id/pop_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="手机号码："
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pop_item_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pop_phone"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_toRightOf="@id/pop_sjr"
+            android:background="@null"
+            android:hint="请输入收件人手机号"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pop_item_phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#f2f2f2" />
+
+        <TextView
+            android:id="@+id/pop_ress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="所在地区："
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pop_item_ress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pop_ress"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_toLeftOf="@id/pop_item_img"
+            android:layout_toRightOf="@id/pop_sjr"
+            android:background="@null"
+            android:hint="请输入地址"
+            android:ellipsize="end"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/pop_item_img"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignBottom="@id/pop_item_ress"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/common_btn_next_n" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pop_ress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#f2f2f2" />
+
+        <TextView
+            android:id="@+id/pop_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view2"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="邮政编码："
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pop_item_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pop_code"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_toRightOf="@id/pop_sjr"
+            android:background="@null"
+            android:hint="请输入邮政编码"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pop_item_code"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="#f2f2f2" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

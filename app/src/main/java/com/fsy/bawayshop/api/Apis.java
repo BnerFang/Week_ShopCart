@@ -16,10 +16,13 @@ public class Apis {
     public static final String POST_REG_URL = "user/v1/register";
     /**
      * banner展示列表 http://172.17.8.100/small/commodity/v1/bannerShow
-     *
+     * <p>
      * http://mobile.bwstudent.com/small/
      */
     public static final String URL_BANNER_SHOW_GET = "http://mobile.bwstudent.com/small/commodity/v1/bannerShow";
+
+    //根据关键词查询商品信息 http://172.17.8.100/small/commodity/v1/findCommodityByKeyword
+    public static final String URL_FIND_COMMODITY_BYKEYWORD_GET = "http://mobile.bwstudent.com/small/commodity/v1/findCommodityByKeyword?keyword=";
 
     //商品首页
     public static final String URL_SHOW_GET = "http://mobile.bwstudent.com/small/commodity/v1/commodityList";
@@ -33,8 +36,6 @@ public class Apis {
     //查询二级商品类目 http://172.17.8.100/small/commodity/v1/findSecondCategory
     public static final String URL_FIND_SECOND_CATEGORY_GET = "commodity/v1/findSecondCategory?firstCategoryId=";
 
-    //根据关键词查询商品信息 http://172.17.8.100/small/commodity/v1/findCommodityByKeyword
-    public static final String URL_FIND_COMMODITY_BYKEYWORD_GET = "http://mobile.bwstudent.com/small/commodity/v1/findCommodityByKeyword?keyword=";
 
     //根据二级类目查询商品信息 http://172.17.8.100/small/commodity/v1/findCommodityByCategory?categoryId=1001004001&page=1&count=5
     public static final String URL_FIND_COMMODITY_BYCATEGORY_GET = "commodity/v1/findCommodityByCategory?categoryId=";
@@ -60,15 +61,6 @@ public class Apis {
     //查询购物车 http://172.17.8.100/small/order/verify/v1/findShoppingCart
     public static final String URL_FIND_SHOPPING_CART_GET = "order/verify/v1/findShoppingCart";
 
-    //修改昵称 http://172.17.8.100/small/user/verify/v1/modifyUserNick
-    public static final String URL_UPDATE_NAME_POST = "user/verify/v1/modifyUserNick";
-
-    //修改用户密码 http://172.17.8.100/small/user/verify/v1/modifyUserPwd
-    public static final String URL_UPDATE_PASSWORD_POST = "user/verify/v1/modifyUserPwd";
-
-    //用户上传头像 http://172.17.8.100/small/user/verify/v1/modifyHeadPic
-    public static final String URL_UPDATE_HEADERIMAGE_POST = "user/verify/v1/modifyHeadPic";
-
     //收货地址列表 http://172.17.8.100/small/user/verify/v1/receiveAddressList
     public static final String URL_RECEIVE_ADDRESS_GET = "user/verify/v1/receiveAddressList";
 
@@ -78,17 +70,27 @@ public class Apis {
     //设置默认收货地址 http://172.17.8.100/small/user/verify/v1/setDefaultReceiveAddress
     public static final String URL_SET_DEFAULT_RECEIVE_ADDRESS_POST = "user/verify/v1/setDefaultReceiveAddress";
 
+    //根据订单状态查询订单信息
+    public static final String URL_ORDER_LIST_BY_STATUS_GET = "order/verify/v1/findOrderListByStatus?status=";
+
+    //创建订单 http://172.17.8.100/small/order/verify/v1/createOrder
+    public static final String URL_CREATE_ORDER_POST = "order/verify/v1/createOrder";
+
+
+    //修改昵称 http://172.17.8.100/small/user/verify/v1/modifyUserNick
+    public static final String URL_UPDATE_NAME_POST = "user/verify/v1/modifyUserNick";
+
+    //修改用户密码 http://172.17.8.100/small/user/verify/v1/modifyUserPwd
+    public static final String URL_UPDATE_PASSWORD_POST = "user/verify/v1/modifyUserPwd";
+
+    //用户上传头像 http://172.17.8.100/small/user/verify/v1/modifyHeadPic
+    public static final String URL_UPDATE_HEADERIMAGE_POST = "user/verify/v1/modifyHeadPic";
+
     //修改收货信息 http://172.17.8.100/small/user/verify/v1/changeReceiveAddress
     public static final String URL_CHANGE_RECEIVE_ADDRESS_PUT = "user/verify/v1/changeReceiveAddress";
 
-    //创建订单 http://172.17.8.100/small/order/verify/v1/createOrder
-    public static final String URL_CREATE_ORDER_POST = "user/verify/v1/createOrder";
-
     //支付 http://172.17.8.100/small/order/verify/v1/pay
     public static final String URL_PAY_POST = "user/verify/v1/pay";
-
-    //根据订单状态查询订单信息 http://172.17.8.100/small/order/verify/v1/findOrderListByStatus
-    public static final String URL_FIND_ORDER_LIST_BYSTATUS_GET = "user/verify/v1/findUserWallet";
 
     //删除订单 http://172.17.8.100/small/order/verify/v1/deleteOrder
     public static final String URL_DELETE_ORDER_DELETE = "user/verify/v1/deleteOrder";

@@ -11,6 +11,9 @@
         android:layout_marginLeft="@dimen/dp_14" />
 
     <RelativeLayout
+        android:layout_toRightOf="@id/cart_item_box"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginRight="@dimen/dp_24"
         android:id="@+id/cart_item_layout"
         android:layout_width="@dimen/dp_292"
         android:layout_height="@dimen/dp_97"

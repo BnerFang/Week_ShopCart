@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_20">
+
+    <RelativeLayout
+        android:background="@drawable/new_bg"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/adds_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="方诗康"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/adds_item_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/adds_item_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="18537610234"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/adds_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adds_item_name"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="XXXXX" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/dp_270"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/adds_item_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#f2f2f2" />
+
+        <CheckBox
+            android:id="@+id/adds_item_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="设为默认地址"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_12" />
+
+        <Button
+            android:id="@+id/adds_item_up"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignBottom="@id/adds_item_box"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@id/adds_item_del"
+            android:background="@drawable/adds_btn_bg"
+            android:text="修改"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_10" />
+
+        <Button
+            android:id="@+id/adds_item_del"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignBottom="@id/adds_item_box"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/adds_btn_bg"
+            android:text="删除"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/sp_10" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

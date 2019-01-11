@@ -1,4 +1,4 @@
-package com.fsy.bawayshop.bean;
+package com.fsy.bawayshop.loginAndregister.bean;
 
 /**
  * @author : FangShiKang

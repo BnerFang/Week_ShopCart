@@ -475,7 +475,6 @@ public class HomePageFragment extends Fragment implements IView {
     }
 
     private long exitTime = 0;
-
     //主界面获取焦点
     private void getFocus() {
         getView().setFocusableInTouchMode(true);

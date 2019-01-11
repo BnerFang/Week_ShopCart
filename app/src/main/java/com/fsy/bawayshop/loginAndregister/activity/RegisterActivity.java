@@ -1,4 +1,4 @@
-package com.fsy.bawayshop.activity;
+package com.fsy.bawayshop.loginAndregister.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.fsy.bawayshop.R;
 import com.fsy.bawayshop.api.Apis;
 import com.fsy.bawayshop.api.ParamsApis;
-import com.fsy.bawayshop.bean.RegisterBean;
+import com.fsy.bawayshop.loginAndregister.bean.RegisterBean;
 import com.fsy.bawayshop.mvp.presenter.IPresenterImplement;
 import com.fsy.bawayshop.mvp.view.IView;
 

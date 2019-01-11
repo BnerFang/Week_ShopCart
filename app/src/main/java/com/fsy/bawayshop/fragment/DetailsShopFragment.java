@@ -21,8 +21,10 @@ import com.fsy.bawayshop.R;
 import com.fsy.bawayshop.adapter.ShopDetailsAdapter;
 import com.fsy.bawayshop.api.Apis;
 import com.fsy.bawayshop.api.ParamsApis;
+import com.fsy.bawayshop.bean.AddCartBean;
 import com.fsy.bawayshop.bean.CartBean;
 import com.fsy.bawayshop.bean.DetailsBean;
+import com.fsy.bawayshop.bean.QueryCartBean;
 import com.fsy.bawayshop.mvp.presenter.IPresenterImplement;
 import com.fsy.bawayshop.mvp.view.IView;
 import com.recker.flybanner.FlyBanner;
@@ -63,10 +65,9 @@ public class DetailsShopFragment extends Fragment implements IView {
     private Unbinder unbinder;
     private ShopDetailsAdapter mShopDetailsAdapter;
     private IPresenterImplement mIPresenterImplement;
-    private int mStock;
-    private int mCommodityId;
     private Intent mIntent;
     private WebSettings mWebSettings;
+    private int mCommodityId;
 
     @Nullable
     @Override
@@ -92,7 +93,6 @@ public class DetailsShopFragment extends Fragment implements IView {
                     list.add(split[i]);
                 }
                 mCommodityId = result.getCommodityId();
-                mStock = result.getSaleNum();
                 mShopDetailsAdapter = new ShopDetailsAdapter(getActivity(), result);
                 //WebView  展示
                 mWebSettings = mDateilsWebview.getSettings();
@@ -114,18 +114,57 @@ public class DetailsShopFragment extends Fragment implements IView {
                 mDateilsRv.setAdapter(mShopDetailsAdapter);
                 mDetailsBanner.setImagesUrl(list);
             }
-        } else if (data instanceof CartBean) {
+        } else if (data instanceof CartBean) {//添加购物车
             CartBean bean = (CartBean) data;
             if (bean.getStatus().equals("0000")) {
                 Toast.makeText(getActivity(), bean.getMessage(), Toast.LENGTH_SHORT).show();
             }
+        } else if (data instanceof QueryCartBean) {//查询购物车
+            QueryCartBean queryCartBean = (QueryCartBean) data;
+            if (queryCartBean.getStatus().equals("0000")) {
+                List<QueryCartBean.ResultBean> beanResult = queryCartBean.getResult();
+                List<AddCartBean> list = new ArrayList<>();
+                if (beanResult != null) {
+                    for (int i = 0; i < beanResult.size(); i++) {
+                        list.add(new AddCartBean(beanResult.get(i).getCommodityId(), beanResult.get(i).getCount()));
+                    }
+                    getAddCart(list);
+                } else {
+                    getAddCart(list);
+                    Toast.makeText(getActivity(), "失败", Toast.LENGTH_SHORT).show();
+                }
+            }
         }
-
     }
+
+    private void getAddCart(List<AddCartBean> list) {
+        String str = "[";
+        for (int i = 0; i < list.size(); i++) {
+            if (mCommodityId == list.get(i).getCommodityId()) {
+                int count = list.get(i).getCount();
+                count++;
+                list.get(i).setCount(count);
+                break;
+            } else if (i == list.size() - 1) {
+                list.add(new AddCartBean(mCommodityId, 1));
+                break;
+            }
+        }
+        for (AddCartBean addBean : list) {
+            str += "{\"commodityId\":" + addBean.getCommodityId() + ",\"count\":" + addBean.getCount() + "},";
+        }
+        String substring = str.substring(0, str.length() - 1);
+        substring += "]";
+        //添加购物车
+        Map<String, String> map = new HashMap<>();
+        map.put(ParamsApis.POST_CART_DATA_KEY, substring);
+        mIPresenterImplement.onPutDatas(Apis.URL_SYNC_SHOPPING_CART_PUT, map, CartBean.class);
+    }
+
 
     @Override
     public void onIFailed(String error) {
-
+        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -141,9 +180,11 @@ public class DetailsShopFragment extends Fragment implements IView {
             default:
                 break;
             case R.id.dateils_img_cart:
-                Map<String, String> map = new HashMap<>();
-                map.put(ParamsApis.POST_CART_DATA_KEY, "[{\"commodityId\"+\":\"" + mCommodityId + "\",\"+\"count\"+\":\"" + mStock + "}]");
-                mIPresenterImplement.onPutDatas(Apis.URL_SYNC_SHOPPING_CART_PUT, map, CartBean.class);
+                /*Map<String, String> map = new HashMap<>();
+                map.put(ParamsApis.POST_CART_DATA_KEY, "[{commodityId:" + mCommodityId + ",count:" + 1 + "},]");
+                mIPresenterImplement.onPutDatas(Apis.URL_SYNC_SHOPPING_CART_PUT, map, CartBean.class);*/
+                //当点击添加购物车时,先查询购物车里的数据
+                mIPresenterImplement.onGetDatas(Apis.URL_FIND_SHOPPING_CART_GET, QueryCartBean.class);
                 break;
             case R.id.dateils_img_buy:
                 break;
@@ -152,6 +193,7 @@ public class DetailsShopFragment extends Fragment implements IView {
         }
     }
 
+    //防止内存泄露
     @Override
     public void onDestroy() {
         super.onDestroy();
